@@ -1,0 +1,29 @@
+{
+  "name": "bajb/api",
+  "license": "MIT",
+  "type": "project",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "require": {
+    "cubex/framework": "^4.0",
+    "packaged/dal": "^1.8"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Api\\": "src/",
+      "ApiTransport\\": "transport/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:cubex/framework.git"
+    }
+  ]
+}
