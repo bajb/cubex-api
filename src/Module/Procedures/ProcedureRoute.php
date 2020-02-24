@@ -1,7 +1,7 @@
 <?php
 namespace Api\Module\Procedures;
 
-use ApiTransport\ApiEndpoint;
+use ApiTransport\Endpoints\ApiEndpoint;
 use ApiTransport\Payloads\AbstractPayload;
 use Packaged\Context\Context;
 use Packaged\Http\Responses\JsonResponse;

@@ -2,9 +2,9 @@
 namespace Api\Modules\Dogs\Procedures;
 
 use Api\Modules\Cats\Storage\Dog;
-use ApiTransport\ApiResponse;
 use ApiTransport\Modules\Dogs\Payloads\ListDogsPayload;
 use ApiTransport\Modules\Dogs\Responses\DogsResponse;
+use ApiTransport\Responses\ApiResponse;
 use Packaged\QueryBuilder\Expression\Like\ContainsExpression;
 use Packaged\QueryBuilder\Predicate\LikePredicate;
 

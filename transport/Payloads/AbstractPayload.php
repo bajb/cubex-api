@@ -1,7 +1,6 @@
 <?php
 namespace ApiTransport\Payloads;
 
-use ApiTransport\ApiPayload;
 use Packaged\Context\Context;
 use Packaged\Helpers\Objects;
 use Packaged\Helpers\ValueAs;

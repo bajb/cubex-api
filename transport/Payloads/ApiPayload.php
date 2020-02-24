@@ -1,5 +1,5 @@
 <?php
-namespace ApiTransport;
+namespace ApiTransport\Payloads;
 
 interface ApiPayload
 {

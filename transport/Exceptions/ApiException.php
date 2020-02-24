@@ -1,7 +1,6 @@
 <?php
-namespace ApiTransport;
+namespace ApiTransport\Exceptions;
 
 interface ApiException extends \Throwable
 {
-
 }

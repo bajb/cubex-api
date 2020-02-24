@@ -1,5 +1,7 @@
 <?php
-namespace ApiTransport;
+namespace ApiTransport\Endpoints;
+
+use ApiTransport\Permissions\ApiPermission;
 
 interface ApiEndpoint
 {
