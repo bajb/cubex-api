@@ -18,6 +18,12 @@ abstract class AbstractPayload implements ApiPayload
     return true;
   }
 
+  /**
+   * @param Context $c
+   *
+   * @return static
+   * @throws \Exception
+   */
   public function fromContext(Context $c)
   {
     $json = ValueAs::obj(json_decode($c->request()->getContent()), new \stdClass());

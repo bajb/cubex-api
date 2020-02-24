@@ -1,18 +1,19 @@
 <?php
 namespace Api\Modules\Dogs\Procedures;
 
-use Api\Module\Procedures\AbstractProcedure;
-use ApiTransport\ApiPayload;
-use ApiTransport\ApiResponse;
-use ApiTransport\Modules\Dogs\Responses\CreateDogResponse;
+use Api\Modules\Cats\Storage\Dog;
+use ApiTransport\Modules\Dogs\Payloads\CreateDogPayload;
+use ApiTransport\Modules\Dogs\Responses\DogResponse;
+use Packaged\Helpers\ValueAs;
 
-class CreateDog extends AbstractProcedure
+class CreateDog extends AbstractDogProcedure
 {
-  public function execute(ApiPayload $payload): ApiResponse
+  public function execute(CreateDogPayload $payload): DogResponse
   {
-    $response = new CreateDogResponse();
-    $response->id = rand(1, 1000);
-    $response->name = "Mr Dog";
-    return $response;
+    $dog = new Dog();
+    $dog->name = ValueAs::nonempty($payload->name, $this->_randomName());
+    $dog->save();
+
+    return $dog->toApiResponse();
   }
 }

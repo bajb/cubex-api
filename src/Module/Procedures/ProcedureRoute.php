@@ -6,6 +6,7 @@ use ApiTransport\Payloads\AbstractPayload;
 use Packaged\Context\Context;
 use Packaged\Http\Responses\JsonResponse;
 use Packaged\Routing\Handler\Handler;
+use Packaged\Routing\RequestCondition;
 use Packaged\Routing\Route;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -20,6 +21,7 @@ class ProcedureRoute extends Route implements Handler
   {
     $this->_endpoint = $endpoint;
     $this->_procedureClass = $procedureClass;
+    $this->add(RequestCondition::i()->path($endpoint->getPath())->method($endpoint->getVerb()));
   }
 
   public function match(Context $context): bool
@@ -68,8 +70,11 @@ class ProcedureRoute extends Route implements Handler
       $payload->fromContext($c);
     }
 
-    $response = $procedure->execute($payload);
-
-    return JsonResponse::create($response);
+    if(method_exists($procedure, 'execute'))
+    {
+      $response = $procedure->execute($payload);
+      return JsonResponse::create($response);
+    }
+    return \Packaged\Http\Response::create("Unable to handle procedure: execute missing", 404);
   }
 }
