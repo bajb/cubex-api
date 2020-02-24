@@ -11,6 +11,12 @@ CREATE TABLE `dogs` (
 
 ```
 
+
+Create a dog
+
+```curl -X POST "http://127.0.0.1:8888/v1/dogs?token=tokenHere"```
+
+
 List All Dogs
 
 ```curl "http://127.0.0.1:8888/v1/dogs?token"```
@@ -19,6 +25,7 @@ List A Dog By ID
 
 ```curl "http://127.0.0.1:8888/v1/dogs/1?token"```
 
-Create a dog
 
-```curl -X POST "http://127.0.0.1:8888/v1/dogs?token=tokenHere"```
+Delete A Dog By ID
+
+```curl -X DELETE "http://127.0.0.1:8888/v1/dogs/8?token"```

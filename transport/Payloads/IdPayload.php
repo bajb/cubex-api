@@ -1,10 +1,9 @@
 <?php
-namespace ApiTransport\Modules\Dogs\Payloads;
+namespace ApiTransport\Payloads;
 
-use ApiTransport\Payloads\AbstractPayload;
 use Packaged\Context\Context;
 
-class RetrieveDogPayload extends AbstractPayload
+class IdPayload extends AbstractPayload
 {
   public $id;
 
@@ -14,5 +13,4 @@ class RetrieveDogPayload extends AbstractPayload
     $pl->id = $c->routeData()->get('id');
     return $pl;
   }
-
 }
