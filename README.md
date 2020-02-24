@@ -11,6 +11,14 @@ CREATE TABLE `dogs` (
 
 ```
 
+List All Dogs
+
+```curl "http://127.0.0.1:8888/v1/dogs?token"```
+
+List A Dog By ID
+
+```curl "http://127.0.0.1:8888/v1/dogs/1?token"```
+
 Create a dog
 
 ```curl -X POST "http://127.0.0.1:8888/v1/dogs?token=tokenHere"```
