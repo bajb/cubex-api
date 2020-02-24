@@ -4,6 +4,7 @@ namespace Api\Module\Procedures;
 use ApiTransport\Endpoints\ApiEndpoint;
 use ApiTransport\Payloads\AbstractPayload;
 use Packaged\Context\Context;
+use Packaged\Context\ContextAware;
 use Packaged\Http\Responses\JsonResponse;
 use Packaged\Routing\Handler\Handler;
 use Packaged\Routing\RequestCondition;
@@ -21,7 +22,9 @@ class ProcedureRoute extends Route implements Handler
   {
     $this->_endpoint = $endpoint;
     $this->_procedureClass = $procedureClass;
-    $this->add(RequestCondition::i()->path($endpoint->getPath())->method($endpoint->getVerb()));
+    $this->add(
+      RequestCondition::i()->path($endpoint->getPath(), RequestCondition::TYPE_EXACT)->method($endpoint->getVerb())
+    );
   }
 
   public function match(Context $context): bool
@@ -63,16 +66,30 @@ class ProcedureRoute extends Route implements Handler
       throw new \Exception("Invalid procedure class given");
     }
 
-    $plClass = $this->_endpoint->getPayloadClass();
-    $payload = new $plClass();
-    if($payload instanceof AbstractPayload)
+    if($procedure instanceof ContextAware)
     {
-      $payload->fromContext($c);
+      $procedure->setContext($c);
     }
 
     if(method_exists($procedure, 'execute'))
     {
-      $response = $procedure->execute($payload);
+      $plClass = $this->_endpoint->getPayloadClass();
+      if($plClass !== null)
+      {
+        $payload = new $plClass();
+        if($payload instanceof AbstractPayload)
+        {
+          $payload->fromContext($c);
+        }
+
+        //Execute with payload
+        $response = $procedure->execute($payload);
+      }
+      else
+      {
+        //Execute without payload
+        $response = $procedure->execute();
+      }
       return JsonResponse::create($response);
     }
     return \Packaged\Http\Response::create("Unable to handle procedure: execute missing", 404);

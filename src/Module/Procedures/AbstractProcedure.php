@@ -1,6 +1,13 @@
 <?php
 namespace Api\Module\Procedures;
 
-abstract class AbstractProcedure implements Procedure
+use Packaged\Context\ContextAware;
+use Packaged\Context\ContextAwareTrait;
+use Packaged\Context\WithContext;
+use Packaged\Context\WithContextTrait;
+
+abstract class AbstractProcedure implements Procedure, WithContext, ContextAware
 {
+  use WithContextTrait;
+  use ContextAwareTrait;
 }

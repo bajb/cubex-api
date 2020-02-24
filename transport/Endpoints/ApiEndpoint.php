@@ -18,9 +18,9 @@ interface ApiEndpoint
   /**
    * Payload Class
    *
-   * @return string
+   * @return null|string
    */
-  public function getPayloadClass(): string;
+  public function getPayloadClass(): ?string;
 
   /**
    * Response Class

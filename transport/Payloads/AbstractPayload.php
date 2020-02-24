@@ -17,6 +17,11 @@ abstract class AbstractPayload implements ApiPayload
     return true;
   }
 
+  public static function i()
+  {
+    return new static();
+  }
+
   /**
    * @param Context $c
    *

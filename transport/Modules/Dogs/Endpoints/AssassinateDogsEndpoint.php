@@ -1,25 +1,24 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
-use ApiTransport\Modules\Dogs\Responses\DogResponse;
-use ApiTransport\Payloads\IdPayload;
+use ApiTransport\Responses\BoolResponse;
 use Packaged\Http\Request;
 
-class RetrieveDogEndpoint extends AbstractDogEndpoint
+class AssassinateDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_GET;
+    return Request::METHOD_DELETE;
   }
 
   public function getPayloadClass(): ?string
   {
-    return IdPayload::class;
+    return null;
   }
 
   public function getResponseClass(): string
   {
-    return DogResponse::class;
+    return BoolResponse::class;
   }
 
   public function getRequiredPermissions(): array

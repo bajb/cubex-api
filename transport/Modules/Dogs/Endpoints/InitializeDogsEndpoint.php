@@ -1,25 +1,29 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
-use ApiTransport\Modules\Dogs\Responses\DogResponse;
-use ApiTransport\Payloads\IdPayload;
+use ApiTransport\Modules\Dogs\Responses\DogsResponse;
 use Packaged\Http\Request;
 
-class RetrieveDogEndpoint extends AbstractDogEndpoint
+class InitializeDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_GET;
+    return Request::METHOD_POST;
+  }
+
+  public function getPath(): string
+  {
+    return parent::getPath() . '/init';
   }
 
   public function getPayloadClass(): ?string
   {
-    return IdPayload::class;
+    return null;
   }
 
   public function getResponseClass(): string
   {
-    return DogResponse::class;
+    return DogsResponse::class;
   }
 
   public function getRequiredPermissions(): array

@@ -6,14 +6,14 @@ use ApiTransport\Modules\Dogs\Permissions\CreateDogPermission;
 use ApiTransport\Modules\Dogs\Responses\DogResponse;
 use Packaged\Http\Request;
 
-class CreateDogEndpoint extends AbstractDogEndpoint
+class CreateDogsEndpoint extends AbstractDogEndpoint
 {
   public function getVerb(): string
   {
     return Request::METHOD_POST;
   }
 
-  public function getPayloadClass(): string
+  public function getPayloadClass(): ?string
   {
     return CreateDogPayload::class;
   }

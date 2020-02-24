@@ -5,14 +5,14 @@ use ApiTransport\Modules\Dogs\Payloads\ListDogsPayload;
 use ApiTransport\Modules\Dogs\Responses\DogsResponse;
 use Packaged\Http\Request;
 
-class ListDogsEndpoint extends AbstractDogEndpoint
+class ListDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
     return Request::METHOD_GET;
   }
 
-  public function getPayloadClass(): string
+  public function getPayloadClass(): ?string
   {
     return ListDogsPayload::class;
   }

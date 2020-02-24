@@ -12,12 +12,7 @@ class DeleteDogEndpoint extends AbstractDogEndpoint
     return Request::METHOD_DELETE;
   }
 
-  public function getPath(): string
-  {
-    return parent::getPath() . '/{id}';
-  }
-
-  public function getPayloadClass(): string
+  public function getPayloadClass(): ?string
   {
     return IdPayload::class;
   }
