@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
-abstract class AbstractDogEndpoint extends AssassinateDogsEndpoint
+abstract class AbstractDogEndpoint extends AbstractDogsEndpoint
 {
   public function getPath(): string
   {

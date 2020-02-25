@@ -18,8 +18,7 @@ Initialize the dogs
 
 Create a dog
 
-```curl -X POST "http://127.0.0.1:8888/v1/dogs?token"```
-
+    ```curl -X POST "http://127.0.0.1:8888/v1/dogs?token"```
 
 List All Dogs
 
@@ -32,7 +31,7 @@ List A Dog By ID
 
 Delete A Dog By ID
 
-```curl -X DELETE "http://127.0.0.1:8888/v1/dogs/8?token"```
+```curl -X DELETE "http://127.0.0.1:8888/v1/dogs/31?token"```
 
 Delete all the dogs
 

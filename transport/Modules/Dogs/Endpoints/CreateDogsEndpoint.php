@@ -6,7 +6,7 @@ use ApiTransport\Modules\Dogs\Permissions\CreateDogPermission;
 use ApiTransport\Modules\Dogs\Responses\DogResponse;
 use Packaged\Http\Request;
 
-class CreateDogsEndpoint extends AbstractDogEndpoint
+class CreateDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
