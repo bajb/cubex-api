@@ -1,8 +1,6 @@
 <?php
 namespace Api\Modules\Dogs;
 
-use Api\Module\Module;
-use Api\Module\Procedures\ProcedureRoute;
 use Api\Modules\Dogs\Procedures\AssassinateDogs;
 use Api\Modules\Dogs\Procedures\CreateDog;
 use Api\Modules\Dogs\Procedures\DeleteDog;
@@ -16,6 +14,8 @@ use ApiTransport\Modules\Dogs\Endpoints\DeleteDogEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\InitializeDogsEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\ListDogsEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\RetrieveDogEndpoint;
+use Cubex\ApiFoundation\Module\Module;
+use Cubex\ApiFoundation\Module\Procedures\ProcedureRoute;
 
 class DogModule implements Module
 {

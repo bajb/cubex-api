@@ -2,13 +2,12 @@
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
 use ApiTransport\Modules\Dogs\Responses\DogsResponse;
-use Packaged\Http\Request;
 
 class InitializeDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_POST;
+    return self::VERB_POST;
   }
 
   public function getPath(): string

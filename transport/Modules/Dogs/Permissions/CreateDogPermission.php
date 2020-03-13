@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Permissions;
 
-use ApiTransport\Permissions\AbstractPermission;
+use Cubex\ApiTransport\Permissions\AbstractPermission;
 
 class CreateDogPermission extends AbstractPermission
 {

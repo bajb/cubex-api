@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Responses;
 
-use ApiTransport\Payloads\AbstractPayload;
+use Cubex\ApiTransport\Payloads\AbstractPayload;
 
 class BoolResponse extends AbstractPayload
 {

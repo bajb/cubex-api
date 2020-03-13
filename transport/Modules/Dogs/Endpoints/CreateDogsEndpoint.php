@@ -4,13 +4,12 @@ namespace ApiTransport\Modules\Dogs\Endpoints;
 use ApiTransport\Modules\Dogs\Payloads\CreateDogPayload;
 use ApiTransport\Modules\Dogs\Permissions\CreateDogPermission;
 use ApiTransport\Modules\Dogs\Responses\DogResponse;
-use Packaged\Http\Request;
 
 class CreateDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_POST;
+    return self::VERB_POST;
   }
 
   public function getPayloadClass(): ?string
@@ -26,6 +25,10 @@ class CreateDogsEndpoint extends AbstractDogsEndpoint
   public function getRequiredPermissions(): array
   {
     return [];
+  }
+
+  public function getPermissions(): array
+  {
     return [new CreateDogPermission()];
   }
 

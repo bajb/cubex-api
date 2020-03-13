@@ -1,7 +1,7 @@
 <?php
 namespace Api\Modules\Dogs\Procedures;
 
-use Api\Module\Procedures\AbstractProcedure;
+use Cubex\ApiFoundation\Module\Procedures\AbstractProcedure;
 
 abstract class AbstractDogProcedure extends AbstractProcedure
 {

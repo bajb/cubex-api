@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
-use ApiTransport\Endpoints\AbstractEndpoint;
+use Cubex\ApiTransport\Endpoints\AbstractEndpoint;
 
 abstract class AbstractDogsEndpoint extends AbstractEndpoint
 {

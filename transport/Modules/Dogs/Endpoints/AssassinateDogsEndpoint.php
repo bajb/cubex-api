@@ -2,13 +2,12 @@
 namespace ApiTransport\Modules\Dogs\Endpoints;
 
 use ApiTransport\Responses\BoolResponse;
-use Packaged\Http\Request;
 
 class AssassinateDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_DELETE;
+    return self::VERB_DELETE;
   }
 
   public function getPayloadClass(): ?string

@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Responses;
 
-use ApiTransport\Responses\AbstractResponse;
+use Cubex\ApiTransport\Responses\AbstractResponse;
 
 class DogResponse extends AbstractResponse
 {

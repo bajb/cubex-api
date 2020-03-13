@@ -3,13 +3,12 @@ namespace ApiTransport\Modules\Dogs\Endpoints;
 
 use ApiTransport\Modules\Dogs\Payloads\ListDogsPayload;
 use ApiTransport\Modules\Dogs\Responses\DogsResponse;
-use Packaged\Http\Request;
 
 class ListDogsEndpoint extends AbstractDogsEndpoint
 {
   public function getVerb(): string
   {
-    return Request::METHOD_GET;
+    return self::VERB_GET;
   }
 
   public function getPayloadClass(): ?string

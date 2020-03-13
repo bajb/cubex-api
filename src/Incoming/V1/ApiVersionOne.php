@@ -1,8 +1,8 @@
 <?php
 namespace Api\Incoming\V1;
 
-use Api\Module\Module;
 use Api\Modules\Dogs\DogModule;
+use Cubex\ApiFoundation\Module\Module;
 use Cubex\Controller\AuthedController;
 use Packaged\Context\Context;
 use Packaged\Http\Responses\JsonResponse;

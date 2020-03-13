@@ -1,7 +1,7 @@
 <?php
 namespace ApiTransport\Modules\Dogs\Payloads;
 
-use ApiTransport\Payloads\AbstractPayload;
+use Cubex\ApiTransport\Payloads\AbstractPayload;
 
 class CreateDogPayload extends AbstractPayload
 {
