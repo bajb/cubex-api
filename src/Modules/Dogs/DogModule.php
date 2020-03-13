@@ -7,7 +7,6 @@ use Api\Modules\Dogs\Procedures\DeleteDog;
 use Api\Modules\Dogs\Procedures\InitDogs;
 use Api\Modules\Dogs\Procedures\ListDogs;
 use Api\Modules\Dogs\Procedures\RetrieveDog;
-use ApiTransport\Modules\Dogs\Endpoints\AbstractDogsEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\AssassinateDogsEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\CreateDogsEndpoint;
 use ApiTransport\Modules\Dogs\Endpoints\DeleteDogEndpoint;
@@ -17,7 +16,7 @@ use ApiTransport\Modules\Dogs\Endpoints\RetrieveDogEndpoint;
 use Cubex\ApiFoundation\Module\Module;
 use Cubex\ApiFoundation\Module\Procedures\ProcedureRoute;
 
-class DogModule implements Module
+class DogModule extends Module
 {
   public function getRoutes()
   {
@@ -29,9 +28,9 @@ class DogModule implements Module
     yield new ProcedureRoute(new ListDogsEndpoint(), ListDogs::class);
   }
 
-  public function getUri(): string
+  public static function getBasePath(): string
   {
-    return AbstractDogsEndpoint::BASE_PATH;
+    return 'dogs';
   }
 
 }

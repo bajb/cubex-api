@@ -12,7 +12,7 @@
     "cubex/framework": "^4.0",
     "packaged/dal": "^1.8",
     "cubex/api-transport": "^0.1",
-    "cubex/api-foundation": "^0.1"
+    "cubex/api-foundation": "^0.2"
   },
   "require-dev": {
   },
@@ -26,6 +26,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:cubex/framework.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:cubex/api-foundation.git"
     }
   ]
 }
